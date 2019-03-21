@@ -46,7 +46,7 @@ class FormularioContatoViewController: UIViewController {
     
     @IBAction func criaContato() {
         self.pegaDadosDoFormulario()
-        dao.adiciona(<#T##contato: Contato##Contato#>)
+        dao.adiciona(contato)
         _ = self.navigationController?.popViewController(animated: true)
     }
     
