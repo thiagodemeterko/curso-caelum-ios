@@ -82,6 +82,20 @@ class ListaContatosTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contatoSelecionado = dao.buscaContatoNaPosicao(indexPath.row)
+        self.exibeFormulario(contatoSelecionado)
+    }
+    
+    func exibeFormulario(_ contato:Contato) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let formulario = storyboard.instantiateViewController(withIdentifier: "Form-Contato") as! FormularioContatoViewController
+        
+        formulario.contato = contato
+        self.navigationController?.pushViewController(formulario, animated: true)
+    }
  
 
     /*
