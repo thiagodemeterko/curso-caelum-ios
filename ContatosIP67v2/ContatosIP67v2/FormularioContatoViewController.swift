@@ -27,22 +27,27 @@ class FormularioContatoViewController: UIViewController {
     
     
     var dao:ContatoDAO
+    var contato: Contato!
     
     required init?(coder aDecoder: NSCoder) {
         self.dao = ContatoDAO.sharedInstance()
         super.init(coder: aDecoder)
     }
     
-    @IBAction func pegaDadosDoFormulario() {
+    func pegaDadosDoFormulario() {
         
-        let contato: Contato = Contato()
+        self.contato = Contato()
         
         contato.nome = self.nome.text!
         contato.telefone = self.telefone.text!
         contato.endereco = self.endereco.text!
         contato.site = self.siteText.text!
-        
-        dao.adiciona(contato)
+    }
+    
+    @IBAction func criaContato() {
+        self.pegaDadosDoFormulario()
+        dao.adiciona(<#T##contato: Contato##Contato#>)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
 }
