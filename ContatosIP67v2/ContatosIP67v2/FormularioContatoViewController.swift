@@ -23,8 +23,7 @@ class FormularioContatoViewController: UIViewController {
     @IBOutlet var nome: UITextField!
     @IBOutlet var telefone: UITextField!
     @IBOutlet var endereco: UITextField!
-    @IBOutlet var siteText: UITextField!
-    
+    @IBOutlet var site: UITextField!
     
     var dao:ContatoDAO
     var contato: Contato!
@@ -41,7 +40,7 @@ class FormularioContatoViewController: UIViewController {
         contato.nome = self.nome.text!
         contato.telefone = self.telefone.text!
         contato.endereco = self.endereco.text!
-        contato.site = self.siteText.text!
+        contato.site = self.site.text!
     }
     
     @IBAction func criaContato() {
