@@ -17,6 +17,7 @@ class FormularioContatoViewController: UIViewController {
     
     var dao:ContatoDAO
     var contato: Contato!
+    var delegate:FormularioContatoViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,11 +60,16 @@ class FormularioContatoViewController: UIViewController {
     @IBAction func criaContato() {
         self.pegaDadosDoFormulario()
         dao.adiciona(contato)
+        
+        self.delegate?.contatoAdicionado(contato)
+        
         _ = self.navigationController?.popViewController(animated: true)
     }
     
     func atualizaContato() {
         pegaDadosDoFormulario()
+        
+        self.delegate?.contatoAtualizado(contato)
         
         _ = self.navigationController?.popViewController(animated: true)
     }

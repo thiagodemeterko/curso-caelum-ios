@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListaContatosTableViewController: UITableViewController {
+class ListaContatosTableViewController: UITableViewController, FormularioContatoViewControllerDelegate {
     
     var dao:ContatoDAO
     static let cellIdentifier = "Cell"
@@ -93,10 +93,18 @@ class ListaContatosTableViewController: UITableViewController {
         
         let formulario = storyboard.instantiateViewController(withIdentifier: "Form-Contato") as! FormularioContatoViewController
         
+        formulario.delegate = self
         formulario.contato = contato
         self.navigationController?.pushViewController(formulario, animated: true)
     }
  
+    func contatoAtualizado(_ contato:Contato) {
+        print("contato atualizado: \(contato.nome)");
+    }
+    
+    func contatoAdicionado(_ contato:Contato) {
+        print("contato adicionado: \(contato.nome)");
+    }
 
     /*
     // Override to support rearranging the table view.
@@ -113,14 +121,20 @@ class ListaContatosTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "FormSegue" {
+            
+            if let formulario = segue.destination as? FormularioContatoViewController {
+                formulario.delegate = self
+            }
+            
+        }
     }
-    */
 
 }

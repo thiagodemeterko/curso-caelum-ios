@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0300FC2244648500F9781A /* FormularioContatoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0300FB2244648500F9781A /* FormularioContatoViewControllerDelegate.swift */; };
 		4C1906BF2241C39600163338 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1906BE2241C39600163338 /* Contato.m */; };
 		4C1906C12241CF3200163338 /* ContatoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1906C02241CF3200163338 /* ContatoDAO.swift */; };
 		4C58DC91224300F700A6762B /* ListaContatosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C58DC90224300F700A6762B /* ListaContatosTableViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0300FB2244648500F9781A /* FormularioContatoViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormularioContatoViewControllerDelegate.swift; sourceTree = "<group>"; };
 		4C1906BC2241C39500163338 /* ContatosIP67v2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ContatosIP67v2-Bridging-Header.h"; sourceTree = "<group>"; };
 		4C1906BD2241C39600163338 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contato.h; path = ContatosIP67v2/Contato.h; sourceTree = "<group>"; };
 		4C1906BE2241C39600163338 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contato.m; path = ContatosIP67v2/Contato.m; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				4CBC906D2241B5A000C00AE0 /* Info.plist */,
 				4CBC90652241B5A000C00AE0 /* ContatosIP67v2.xcdatamodeld */,
 				4C1906BC2241C39500163338 /* ContatosIP67v2-Bridging-Header.h */,
+				4C0300FB2244648500F9781A /* FormularioContatoViewControllerDelegate.swift */,
 			);
 			name = Others;
 			path = ContatosIP67v2;
@@ -180,6 +183,7 @@
 			files = (
 				4C1906BF2241C39600163338 /* Contato.m in Sources */,
 				4CBC90672241B5A000C00AE0 /* ContatosIP67v2.xcdatamodeld in Sources */,
+				4C0300FC2244648500F9781A /* FormularioContatoViewControllerDelegate.swift in Sources */,
 				4C1906C12241CF3200163338 /* ContatoDAO.swift in Sources */,
 				4CBC90612241B5A000C00AE0 /* FormularioContatoViewController.swift in Sources */,
 				4CBC905F2241B5A000C00AE0 /* AppDelegate.swift in Sources */,
