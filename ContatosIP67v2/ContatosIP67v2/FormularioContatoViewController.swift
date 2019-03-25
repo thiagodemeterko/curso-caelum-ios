@@ -33,6 +33,10 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
             self.endereco.text = contato.endereco
             self.site.text = contato.site
             
+            if let foto = contato.foto {
+                self.imageView.image = self.contato.foto
+            }
+            
             let botaoAlterar = UIBarButtonItem(title: "Confirmar", style: .plain, target: self, action: #selector(atualizaContato))
             
             self.navigationItem.rightBarButtonItem = botaoAlterar
@@ -55,6 +59,8 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
         if(contato == nil) {
             self.contato = Contato()
         }
+        
+        self.contato.foto = self.imageView.image
         
         contato.nome = self.nome.text!
         contato.telefone = self.telefone.text!
@@ -105,7 +111,6 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
         
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.clipsToBounds = true
-        
     }
     
 }
