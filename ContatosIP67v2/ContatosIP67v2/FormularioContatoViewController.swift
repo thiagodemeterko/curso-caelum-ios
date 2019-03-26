@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FormularioContatoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -14,8 +15,11 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
     @IBOutlet var telefone: UITextField!
     @IBOutlet var endereco: UITextField!
     @IBOutlet var site: UITextField!
-    
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var latitude: UITextField!
+    @IBOutlet var longitude: UITextField!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    @IBOutlet var alerta: UIAlertController!
     
     var dao:ContatoDAO
     var contato: Contato!
@@ -32,9 +36,11 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
             self.telefone.text = contato.telefone
             self.endereco.text = contato.endereco
             self.site.text = contato.site
+            self.latitude.text = contato.latitude?.description
+            self.longitude.text = contato.longitude?.description
             
             if let foto = contato.foto {
-                self.imageView.image = self.contato.foto
+                self.imageView.image = foto
             }
             
             let botaoAlterar = UIBarButtonItem(title: "Confirmar", style: .plain, target: self, action: #selector(atualizaContato))
@@ -60,12 +66,31 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
             self.contato = Contato()
         }
         
-        self.contato.foto = self.imageView.image
+        if let imagem = self.imageView.image {
+            self.contato.foto = imagem
+        }
         
         contato.nome = self.nome.text!
         contato.telefone = self.telefone.text!
         contato.endereco = self.endereco.text!
+        
+        if contato.endereco.isEmpty {
+            let alertView = UIAlertController(title: "Alerta", message: "Favor preencher o endereço!", preferredStyle: .alert)
+            
+            let consistencia = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertView.addAction(consistencia)
+            self.present(alertView, animated: true, completion: nil)
+        }
+        
         contato.site = self.site.text!
+        
+        if let latitude = Double(self.latitude.text!) {
+            self.contato.latitude = latitude as NSNumber
+        }
+        
+        if let longitude = Double(self.longitude.text!) {
+            self.contato.longitude = longitude as NSNumber
+        }
     }
     
     @IBAction func criaContato() {
@@ -75,6 +100,27 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
         self.delegate?.contatoAdicionado(contato)
         
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func buscaCoordenadas(sender: UIButton) {
+        
+        self.loading.startAnimating()
+        sender.isEnabled = false
+        
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(self.endereco.text!) { (resultado, error) in
+            if error == nil && (resultado?.count)! > 0 {
+                let placemark = resultado![0]
+                let coordenada = placemark.location!.coordinate
+                
+                self.latitude.text = coordenada.latitude.description
+                self.longitude.text = coordenada.longitude.description
+            }
+            
+            self.loading.stopAnimating()
+            sender.isEnabled = true
+        }
     }
     
     func atualizaContato() {
