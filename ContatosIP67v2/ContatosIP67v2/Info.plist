@@ -38,5 +38,7 @@
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Deseja liberar a localização atual?</string>
 </dict>
 </plist>
