@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class FormularioContatoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class FormularioContatoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet var nome: UITextField!
     @IBOutlet var telefone: UITextField!
@@ -47,7 +47,14 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
             
             self.navigationItem.rightBarButtonItem = botaoAlterar
         }
+        
+        endereco.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.buscaCoordenadasFocus()
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,9 +83,8 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
         
         if contato.endereco.isEmpty {
             let alertView = UIAlertController(title: "Alerta", message: "Favor preencher o endereço!", preferredStyle: .alert)
-            
-            let consistencia = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alertView.addAction(consistencia)
+            let acao = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertView.addAction(acao)
             self.present(alertView, animated: true, completion: nil)
         }
         
@@ -120,6 +126,21 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
             
             self.loading.stopAnimating()
             sender.isEnabled = true
+        }
+    }
+    
+    func buscaCoordenadasFocus() {
+        
+        let geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(self.endereco.text!) { (resultado, error) in
+            if error == nil && (resultado?.count)! > 0 {
+                let placemark = resultado![0]
+                let coordenada = placemark.location!.coordinate
+                
+                self.latitude.text = coordenada.latitude.description
+                self.longitude.text = coordenada.longitude.description
+            }
         }
     }
     
