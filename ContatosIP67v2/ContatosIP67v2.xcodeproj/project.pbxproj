@@ -14,6 +14,7 @@
 		4C1987D92249914E009D235A /* ContatosNoMapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1987D82249914E009D235A /* ContatosNoMapaViewController.swift */; };
 		4C27E3652245A3F60008F0C2 /* GerenciadorDeAcoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27E3642245A3F60008F0C2 /* GerenciadorDeAcoes.swift */; };
 		4C58DC91224300F700A6762B /* ListaContatosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C58DC90224300F700A6762B /* ListaContatosTableViewController.swift */; };
+		4C85CC58224C351400554E9E /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85CC57224C351400554E9E /* CoreDataUtil.swift */; };
 		4CBC905F2241B5A000C00AE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC905E2241B5A000C00AE0 /* AppDelegate.swift */; };
 		4CBC90612241B5A000C00AE0 /* FormularioContatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC90602241B5A000C00AE0 /* FormularioContatoViewController.swift */; };
 		4CBC90642241B5A000C00AE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC90622241B5A000C00AE0 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		4C1987DA2249AA53009D235A /* Vila Mariana.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
 		4C27E3642245A3F60008F0C2 /* GerenciadorDeAcoes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciadorDeAcoes.swift; sourceTree = "<group>"; };
 		4C58DC90224300F700A6762B /* ListaContatosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaContatosTableViewController.swift; path = ContatosIP67v2/ListaContatosTableViewController.swift; sourceTree = "<group>"; };
+		4C85CC57224C351400554E9E /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtil.swift; sourceTree = "<group>"; };
 		4CBC905B2241B5A000C00AE0 /* ContatosIP67v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBC905E2241B5A000C00AE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CBC90602241B5A000C00AE0 /* FormularioContatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormularioContatoViewController.swift; path = ContatosIP67v2/FormularioContatoViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4CBC905E2241B5A000C00AE0 /* AppDelegate.swift */,
+				4C85CC57224C351400554E9E /* CoreDataUtil.swift */,
 				4CBC90682241B5A000C00AE0 /* Assets.xcassets */,
 				4CBC906A2241B5A000C00AE0 /* LaunchScreen.storyboard */,
 				4CBC906D2241B5A000C00AE0 /* Info.plist */,
@@ -129,7 +132,6 @@
 				CF02F32F96DA8FAA2836D589 /* Pods-ContatosIP67v2.debug.xcconfig */,
 				D2CD4DFC83D2CEBC8CEFC872 /* Pods-ContatosIP67v2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -216,15 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ContatosIP67v2-checkManifestLockResult.txt",
 			);
@@ -245,6 +243,7 @@
 				4C1987D92249914E009D235A /* ContatosNoMapaViewController.swift in Sources */,
 				4C27E3652245A3F60008F0C2 /* GerenciadorDeAcoes.swift in Sources */,
 				4C0300FC2244648500F9781A /* FormularioContatoViewControllerDelegate.swift in Sources */,
+				4C85CC58224C351400554E9E /* CoreDataUtil.swift in Sources */,
 				4C1906C12241CF3200163338 /* ContatoDAO.swift in Sources */,
 				4CBC90612241B5A000C00AE0 /* FormularioContatoViewController.swift in Sources */,
 				4CBC905F2241B5A000C00AE0 /* AppDelegate.swift in Sources */,

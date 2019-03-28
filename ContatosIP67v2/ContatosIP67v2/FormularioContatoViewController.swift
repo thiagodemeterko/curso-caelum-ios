@@ -70,7 +70,7 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
     func pegaDadosDoFormulario() {
         
         if(contato == nil) {
-            self.contato = Contato()
+            self.contato = dao.novoContato()
         }
         
         if let imagem = self.imageView.image {

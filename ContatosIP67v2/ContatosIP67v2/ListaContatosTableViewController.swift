@@ -70,6 +70,7 @@ class ListaContatosTableViewController: UITableViewController, FormularioContato
         
         self.tableView.reloadData()
         
+        
         if let linha = self.linhaDestaque {
             self.tableView.selectRow(at: linha, animated: true, scrollPosition: .middle)
             
@@ -78,6 +79,7 @@ class ListaContatosTableViewController: UITableViewController, FormularioContato
                 self.linhaDestaque = Optional.none
             }
         }
+        
     }
  
 
@@ -114,10 +116,12 @@ class ListaContatosTableViewController: UITableViewController, FormularioContato
     }
  
     func contatoAtualizado(_ contato:Contato) {
+        dao.carregaContatos()
         self.linhaDestaque = IndexPath(row: dao.buscaPosicaoDoContato(contato), section: 0)
     }
     
     func contatoAdicionado(_ contato:Contato) {
+        dao.carregaContatos()
         self.linhaDestaque = IndexPath(row: dao.buscaPosicaoDoContato(contato), section: 0)
     }
     
