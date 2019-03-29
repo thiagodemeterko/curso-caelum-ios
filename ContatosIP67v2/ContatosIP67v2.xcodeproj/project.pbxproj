@@ -12,6 +12,7 @@
 		4C1906BF2241C39600163338 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1906BE2241C39600163338 /* Contato.m */; };
 		4C1906C12241CF3200163338 /* ContatoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1906C02241CF3200163338 /* ContatoDAO.swift */; };
 		4C1987D92249914E009D235A /* ContatosNoMapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1987D82249914E009D235A /* ContatosNoMapaViewController.swift */; };
+		4C24B6C1224D8C42002DA894 /* TemperaturaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C24B6C0224D8C42002DA894 /* TemperaturaViewController.swift */; };
 		4C27E3652245A3F60008F0C2 /* GerenciadorDeAcoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27E3642245A3F60008F0C2 /* GerenciadorDeAcoes.swift */; };
 		4C58DC91224300F700A6762B /* ListaContatosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C58DC90224300F700A6762B /* ListaContatosTableViewController.swift */; };
 		4C85CC58224C351400554E9E /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85CC57224C351400554E9E /* CoreDataUtil.swift */; };
@@ -31,6 +32,7 @@
 		4C1906C02241CF3200163338 /* ContatoDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContatoDAO.swift; path = ContatosIP67v2/ContatoDAO.swift; sourceTree = "<group>"; };
 		4C1987D82249914E009D235A /* ContatosNoMapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContatosNoMapaViewController.swift; sourceTree = "<group>"; };
 		4C1987DA2249AA53009D235A /* Vila Mariana.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
+		4C24B6C0224D8C42002DA894 /* TemperaturaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperaturaViewController.swift; sourceTree = "<group>"; };
 		4C27E3642245A3F60008F0C2 /* GerenciadorDeAcoes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciadorDeAcoes.swift; sourceTree = "<group>"; };
 		4C58DC90224300F700A6762B /* ListaContatosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaContatosTableViewController.swift; path = ContatosIP67v2/ListaContatosTableViewController.swift; sourceTree = "<group>"; };
 		4C85CC57224C351400554E9E /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtil.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		4C58DC922243159B00A6762B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4C24B6C0224D8C42002DA894 /* TemperaturaViewController.swift */,
 				4C1987D82249914E009D235A /* ContatosNoMapaViewController.swift */,
 				4CBC90602241B5A000C00AE0 /* FormularioContatoViewController.swift */,
 				4C58DC90224300F700A6762B /* ListaContatosTableViewController.swift */,
@@ -246,6 +249,7 @@
 				4C85CC58224C351400554E9E /* CoreDataUtil.swift in Sources */,
 				4C1906C12241CF3200163338 /* ContatoDAO.swift in Sources */,
 				4CBC90612241B5A000C00AE0 /* FormularioContatoViewController.swift in Sources */,
+				4C24B6C1224D8C42002DA894 /* TemperaturaViewController.swift in Sources */,
 				4CBC905F2241B5A000C00AE0 /* AppDelegate.swift in Sources */,
 				4C58DC91224300F700A6762B /* ListaContatosTableViewController.swift in Sources */,
 			);
