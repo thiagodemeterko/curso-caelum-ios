@@ -131,6 +131,8 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
     
     func buscaCoordenadasFocus() {
         
+        self.loading.startAnimating()
+        
         let geocoder = CLGeocoder()
         
         geocoder.geocodeAddressString(self.endereco.text!) { (resultado, error) in
@@ -141,6 +143,8 @@ class FormularioContatoViewController: UIViewController, UINavigationControllerD
                 self.latitude.text = coordenada.latitude.description
                 self.longitude.text = coordenada.longitude.description
             }
+            
+            self.loading.stopAnimating()
         }
     }
     
